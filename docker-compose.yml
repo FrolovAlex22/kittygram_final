@@ -11,12 +11,12 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
-      - media:/media
   backend:
     image: falex22/kittygram_backend
     env_file: .env
     volumes:
       - static:/static
+      - media:/media
     depends_on:
       - db
   frontend:
