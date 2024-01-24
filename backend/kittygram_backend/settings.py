@@ -8,11 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
-# Если я все правильно понял вы просите чтобы я указал значение по умолчанию, например:
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ''localhost'').split() или ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default = 'localhost').split()
-# Проект успешно идет на деплой, но не проходит тесты.
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
