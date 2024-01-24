@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split()
 # Вы пишите:Так как ALLOWED_HOSTS это список, а из env приходят строки, не забудь применить метод .split
 # В первый раз я применил метод ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ') явно указав разделитель
 # После второго замечания вызвал метод не указывая разделитель ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
